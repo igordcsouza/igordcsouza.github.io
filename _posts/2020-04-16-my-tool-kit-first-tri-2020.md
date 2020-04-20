@@ -96,3 +96,4 @@ Ta rolando uma thread no Twitter sobre isso e o Guto Carvalho fez um [post](http
 * Gerenciamento de atividades/tempo
   * ToDoIst
   * RescueTime
+  * DonIst (WIP)
