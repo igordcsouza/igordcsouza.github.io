@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>My website</title>
+    <description>A virtual proof that I'm awesome</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml" />
+    
+      <item>
+        <title>Minha caixa de ferramentas no inicio de 2020</title>
+        <description>
+          
+          Ta rolando uma thread no Twitter sobre isso e o Guto Carvalho fez um post que eu achei bem legal e resolvi copiar para acompanhar ao longo dos anos. Notebook Pessoal/Trabalho (DUAL BOOT) Ubuntu 18.04 Google Chrome 1Password ToDoIst Grammarly Notifier for Github VSCode Slack Dracula Theme OBS Audacity oh-my-zsh...
+        </description>
+        <pubDate>Thu, 16 Apr 2020 00:00:00 -0700</pubDate>
+        <link>http://localhost:4000/2020-04-16-my-tool-kit-first-tri-2020/</link>
+        <guid isPermaLink="true">http://localhost:4000/2020-04-16-my-tool-kit-first-tri-2020/</guid>
+      </item>
+    
+  </channel>
+</rss>
