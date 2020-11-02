@@ -53,12 +53,12 @@ class GamepediaScrapper:
 I'll ask sorry in advance for this and all other codes that I'll present here :) 
 Ignoring my perfect code, let's talk about some code snippets.
 
-driver = webdriver.Firefox() = Here we are instantiating the webdriver using the Firefox. 
-driver.get(URL) = This command will open Firefox on the URL given. 
+`driver = webdriver.Firefox()` = Here we are instantiating the webdriver using the Firefox. 
+`driver.get(URL)` = This command will open Firefox on the URL given. 
 
-Selenium has a few functions that we can use to locate a specific element of the site.
-https://selenium-python.readthedocs.io/locating-elements.html
-We are using the find_elements_by_xpath that gives us the ability to find a sequence of class/ids/tags.
+Selenium has a few functions that we can use to [locate a specific element](https://selenium-python.readthedocs.io/locating-elements.html) of the site.
+
+We are using the `find_elements_by_xpath` that gives us the ability to find a sequence of class/ids/tags.
 
 Almost all the functions have the `elements` and `element` version. If you use the `element`, the function will return only the first match.
 
@@ -101,7 +101,7 @@ class MatchHistoryScrapper:
 </code>
 
 I've had split into four functions. 
-  * __init__
+  * \__init__
   * __login
   * __set_time_of_match
   * get_time
