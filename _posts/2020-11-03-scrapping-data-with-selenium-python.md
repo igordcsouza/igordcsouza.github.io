@@ -6,13 +6,13 @@ image: /img/selenium_python.png
 
 "Why I need to scrap data?" 
 
-This is probably the first thing you had asked yourself when you saw that title on the Readme, right?
+This is probably the first thing you had asked yourself when you saw that title, right?
 
 So I can give you at least two good motives: 
-Collect data that is not available in a JSON/CSV format.
-Test our application.
+- Collect data that is not available in a JSON/CSV format.
+- Test our application.
 
-In this text, I'll only show how to collect data from different sites, but the test approach is similar. 
+In this post, I'll only show you how to collect data from different sites, but the test approach is similar. 
 
 I've decided to serve the League of Legends data in this project. Let's call it API.lol. The name is available, but it cost 100$, so I won't buy it yet. When we have a production-ready version, I will revisit this decision. :) 
 
