@@ -1,10 +1,8 @@
 ---
 layout: post
 title: Starting a new project! Hyped API!
-image: /img/sprints_planning.PNG
+image: /img/api_first.jpg
 ---
-
-# Hyped-API
 
 Hey everyone, every now and then I start a new project to learn or practice some tool. This time I'll try something different. I'm planning to create an API from the ground using all the tools that I want to learn, going through the process of getting the API from the first commit to publish it as a real product.
 
