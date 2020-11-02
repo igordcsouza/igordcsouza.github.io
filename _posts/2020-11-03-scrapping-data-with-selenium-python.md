@@ -54,6 +54,7 @@ I'll ask sorry in advance for this and all other codes that I'll present here :)
 Ignoring my perfect code, let's talk about some code snippets.
 
 `driver = webdriver.Firefox()` = Here we are instantiating the webdriver using the Firefox. 
+
 `driver.get(URL)` = This command will open Firefox on the URL given. 
 
 Selenium has a few functions that we can use to [locate a specific element](https://selenium-python.readthedocs.io/locating-elements.html) of the site.
