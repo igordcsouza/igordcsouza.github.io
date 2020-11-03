@@ -4,18 +4,18 @@ title: Starting a new project! Hyped API!
 image: /img/api_first.jpg
 ---
 
-Hey everyone, every now and then I start a new project to learn or practice some tool. This time I'll try something different. I'm planning to create an API from the ground using all the tools that I want to learn, going through the process of getting the API from the first commit to publish it as a real product.
+Hey everyone, every now and then I start a new project to learn or practice some tool. This time I will try something different. I’m planning to create an API from the ground up using all the tools that I want to learn, going through the process of getting the API from the first commit to publish it as a real product.
 
-I'll create bi-weekly posts with:
+I will create bi-weekly posts with the following:
+
 - Updates of the project
-- What I'm working on.
-- Why I'm using these tool.
+- What I am working on.
+- Why I am using these tool.
 - How these tools works
 
-If you know about a  bleeding edge tool that we could work with, send me a message and I'll be glad to take a look and give a try.
+If you know about a bleeding edge tool that we could work with, send me a message and I will be glad to look and give it a try.
 
-Ok, so how it gonna work?
-I've created a planning for the first 10 sprints. A sprint won't have an exact time frame since I'm planning to work on that only 5h/week and some of these tools will probably require different effort to really understand how it works. But even that a sprint could take a month, I'll make bi-weekly reports so you can follow the project.
+Ok, so how is this going to work? I have created a plan for the first 10 sprints. A sprint will not have an exact time frame since I can only commit 5h/week to this project and some of these tools will probably require different effort to really understand how they works. But even if a sprint lasts a month, I will still write bi-weekly reports so you can follow the project.
 
 ![Sprints](../img/sprints_planning.PNG)
 
@@ -31,7 +31,7 @@ I've created a planning for the first 10 sprints. A sprint won't have an exact t
 - Add meaningful logs to our app.
 
 <b>Sprint 4:</b>
-- Why using a Gateway API?
+- Why use Gateway API?
 - Kong as our Gateway API.
 - Integrating Kong with ELK Stack.
 - Is our API working? Tests, tests, tests... 
