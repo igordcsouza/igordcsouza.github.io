@@ -15,7 +15,7 @@ Se você veio até aqui só pelo curso segue os links, mas se puder dá uma lida
 * [Twitter do Curso](https://twitter.com/hashicourse)
 * [Meu Twitter](https://twitter.com/igordcsouza)
 * [Youtube](https://www.youtube.com/channel/UC3yoPZJdjwOjrHWy_iEP08A)
-* [Telegram](t.me/terraformbr)
+* [Telegram](https://t.me/terraformbr)
 * [Site do HashiCourse](https://hashicourse.com)
 <br>
 <br>
