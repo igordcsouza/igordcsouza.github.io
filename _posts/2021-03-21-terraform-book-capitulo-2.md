@@ -1,4 +1,9 @@
-# Primeiros Passos
+---
+layout: post
+title: Terraform na pratica - Capitulo 2
+image: /img/terraform.png
+---
+
 
 ## Terraform Init
 
@@ -10,7 +15,7 @@ Para entender na prática o que ele faz vamos criar um arquivo chamado `main.tf`
 provider "digitalocean" {}
 ```
 
-Vamos falar mais a frente sobre providers, mas o que você precisa saber nesse momento é que cada provider é como se fosse um dicionário. No nosso caso, estamos baixando um dicionário para ensinar o nosso código a se comunicar com a API do Digital Ocean.
+Vamos falar mais pra frente sobre providers, mas o que você precisa saber nesse momento é que cada provider é como se fosse um dicionário. No nosso caso, estamos baixando um dicionário para ensinar o nosso código a se comunicar com a API do Digital Ocean.
 
 Para manter um tamanho decente, nosso binário não vem com todos os providers por padrão. Então precisamos baixar o nosso plugin antes de executar qualquer outro comando.
 
@@ -64,7 +69,7 @@ Para resolver isso vamos criar um arquivo chamado de `versions.tf` e vamos adici
 }
 ```
 
-Nesse caso estamos deixando bem explicito para o terraform que quando utilizarmos o provider `digitalocean` ele deve olhar no provider que se encontra no registry utilizando o path `digitalocean/digitalocean`. Eu nao vou colocar uma versao especifica do provider pois quero usar sempre a ultima disponivel, mas e uma boa pratica especificar uma versao principalmente se voce estiver fazendo uso do codigo em producao. 
+Nesse caso estamos deixando explicito para o terraform que quando utilizarmos o provider `digitalocean` ele deve olhar o provider que se encontra no registry utilizando o path `digitalocean/digitalocean`. Eu nao vou colocar uma versao especifica do provider pois quero usar sempre a ultima disponivel, mas e uma boa pratica especificar uma versao principalmente se voce estiver fazendo uso do codigo em producao. 
 
 Vamos aproveitar pra cadastrar uma versao minima e maxima do terraform, a principio as proximas versoes nao devem ter muitas break changes, mas quando lancarem a 0.15.x eu atualizo esse material!
 
@@ -138,7 +143,7 @@ Caso voce queira atualizar a versao de um provider onde existe esse arquivo, bas
 
 Agora que já rodamos o init e fizemos download da biblioteca da DigitalOcean, vamos fazer uso dos recursos disponíveis para entender melhor como o comando plan funciona. A primeira coisa que iremos fazer é abrir a documentação do terraform na parte que se refere a biblioteca da DigitalOcean (https://www.terraform.io/docs/providers/do/index.html).
 
-.Se você prestar atenção vai ver que existem basicamente 3 itens no menu lateral:
+Se você prestar atenção vai ver que existem basicamente 3 itens no menu lateral:
 
 * DigitalOcean Provider: Aqui você encontra uma explicação de como configurar corretamente o provider no seu código. Ele explica coisas como quais variáveis ele busca por padrão no seu ambiente e quais parâmetros são aceitos.
 
@@ -211,7 +216,7 @@ Plan: 1 to add, 0 to change, 0 to destroy.
 
 
 
-O terraform plan nunca vai alterar o seu arquivo de estado esteja ele local ou remoto. Mas o que é arquivo de estado? Temos um capítulo inteiro para falar sobre isso, mas por hora entenda que o arquivo de estado é o local onde o terraform armazena toda informação sobre sua infraestrutura. Quando a gente pede pra ele planejar a execução ele usa esse arquivo de estado apenas para comparar o que deveria ser criado com o que ja foi criado. Mas e se eu perder o arquivo? Como eu faço pra usar esse arquivo em time? Calma pequeno gafanhoto, vamos falar sobre isso mais pra frente!
+O `terraform plan` nunca vai alterar o seu arquivo de estado esteja ele local ou remoto. Mas o que é arquivo de estado? Temos um capítulo inteiro para falar sobre isso, mas por hora entenda que o arquivo de estado é o local onde o terraform armazena toda informação sobre sua infraestrutura. Quando a gente pede pra ele planejar a execução ele usa esse arquivo de estado apenas para comparar o que deveria ser criado com o que ja foi criado. Mas e se eu perder o arquivo? Como eu faço pra usar esse arquivo em time? Calma pequeno gafanhoto, vamos falar sobre isso mais pra frente!
 
 
 ```
@@ -248,10 +253,6 @@ Plan: 1 to add, 0 to change, 0 to destroy.
 
 
 Aqui conseguimos ver exatamente tudo que o terraform irá criar para nós com um símbolo de + do lado. Alguns valores do droplet foram pré fixados, como por exemplo a região (region) que já mostra o valor de nyc2, alguns outros valores apenas serão recebidos após a criação do droplet, como é o caso do preço por hora (price_hourly).
-
-
-
-
 
 Existem duas variações importantes no `plan` que precisamos entender: 
 a primeira é o que o terraform chama de update in-place , que basicamente é atualizar um valor de um parâmetro sem afetar o recurso a nível de precisarmos recriar o mesmo. Esse tipo de variação é apresentada da seguinte forma:
@@ -553,7 +554,7 @@ Outputs:
 droplet_ip = "104.248.203.68"
 ```
 
-Muito provavelmente seu numero de ip e diferente do meu, mas se por algum milagre voce pegou o mesmo, bate uma foto e me manda :)
+Muito provavelmente seu numero de ip é diferente do meu, mas se por algum milagre voce pegou o mesmo, bate um print e me manda :)
 
 Uma ultima dica no que se refere a outputs e que voce nao precisa utilizar apenas o apply para ter acesso a todos os outputs do seu codigo. Considerando que voce ja tenha executado o apply pelo menos uma vez, voce pode utilizar o `terraform output`:
 

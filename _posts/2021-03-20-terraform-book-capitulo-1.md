@@ -1,10 +1,17 @@
+---
+layout: post
+title: Terraform na pratica - Capitulo 1
+image: /img/terraform.png
+---
+
+
 # Instalação no Linux
 
 Antes de mais nada precisamos instalar o Terraform na nossa máquina, 
 a versão do linux que eu vou utilizar aqui é o Ubuntu 20.04.
 No site do Terraform precisamos baixar o pacote compatível com o nosso 
-sistema operacional que, no caso, se encontra nesse link: 
-https://releases.hashicorp.com/terraform/0.14.6/terraform_0.14.6_linux_amd64.zip
+sistema operacional que, no caso, se encontra 
+[nesse link.](https://releases.hashicorp.com/terraform/0.14.6/terraform_0.14.6_linux_amd64.zip)
 No momento que escrevo a versão mais atual do Terraform é a 0.14.6!
 Por padrão o arquivo que baixamos vem no formato .zip e precisamos descompactar esse arquivo.
 
@@ -64,7 +71,6 @@ https://brew.sh/index_pt-br , que ele vai te ajudar muito a gerenciar os pacotes
 Para instalar o brew no MacOs basta abrir o terminal e executar um comando:
 
 ```
-
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
@@ -196,7 +202,7 @@ Terraform v0.14.6
 
 Agora se você precisar rodar uma versão diferente do terraform basta trocar o nome do alias por algo similar a terraform-tnp e trocar a versão do container de latest para a desejada e pronto!
 
-### Criando nossa conta na Digital Ocean
+## Criando nossa conta na Digital Ocean
 
 Para aprendermos um pouco sobre o Terraform precisamos criar uma conta em algum provedor para executar nossos testes. A DigitalOcean tem um programa de referência que no momento está dando 100$ para cada pessoa que se inscrever pelo link: 
 
