@@ -51,7 +51,7 @@ sudo mv terraform /usr/local/bin/terraform
 ```
 
 O Ubuntu pedirá para digitar a senha de root e por fim vamos testar 
-novamente sem passar o endereço completo para termos certeza de que esta 
+novamente sem passar o endereço completo para termos certeza de que está 
 tudo funcionando corretamente:
 
 ```
@@ -81,7 +81,7 @@ brew install terraform
 ```
 
 
-Por ultimo vamos confirmar a versao instalada:
+Por último vamos confirmar a versão instalada:
 
 ```
 ➜  terraform --version
@@ -90,7 +90,7 @@ Terraform v0.14.6
 
 # Instalação no Windows
 
-Apesar de todos os nossos exemplos serem executados em um sistema linux, caso você queira acompanhar esse livro utilizando o sistema operacional Windows precisará instalar o Chocolatey que ,assim como o Brew pro MacOs, funciona como um gerenciador de pacotes para o Windows.
+Apesar de todos os nossos exemplos serem executados em um sistema linux, caso você queira acompanhar utilizando o sistema operacional Windows precisará instalar o Chocolatey que ,assim como o Brew pro MacOs, funciona como um gerenciador de pacotes para o Windows.
 
 Acesse o site https://chocolatey.org/ e siga o passo a passo para instalação e em seguida abra o cmd e digite:
 
@@ -110,11 +110,11 @@ Terraform v0.14.6
 
 Agora que já vimos como instalar em cada um dos principais sistemas operacionais, vamos brincar um pouco com o Docker. Caso você não conheça o docker, o que eu recomendo, pode instalar o terraform da forma padrão no seu sistema operacional e pular essa parte.    
 Sem mais delongas, por que deveríamos utilizar o terraform dentro de um container?
-Eu vou te dar um exemplo, enquanto escrevo esse livro estamos na versão 0.14.6 do terraform 
+Eu vou te dar um exemplo, enquanto escrevo estamos na versão 0.14.6 do terraform 
 e na empresa que eu trabalho praticamente todos os nossos módulos ainda rodam na 
 versão 0.13.x. Eu poderia utilizar algum gerenciador de versão 
-(falaremos sobre isso mais pra frente), mas caso voce goste de fazer backup das suas configs ou
-queira alterar inclusive as variaveis que sao utilizadas em cada versao, o docker seria a melhor opcao. 
+(falaremos sobre isso mais pra frente), mas caso você goste de fazer backup das suas configs ou
+queira alterar inclusive as variáveis que são utilizadas em cada versão, o docker seria a melhor opção. 
 O  que eu faço é estipular versões específicas para cada empresa, por exemplo:
 
 A empresa `igordcsouza` usa a versão 0.13.x então quando eu rodar o comando:
@@ -124,7 +124,7 @@ terraform-igordcsouza --version
 Terraform v0.13.x
 ```
 
-E se eu executar o comando que criei pra esse livro seria algo como:
+E se eu executar o comando que criei seria algo como:
 ```
 terraform-tnp --version
 Terraform v0.14.6
@@ -209,7 +209,7 @@ Para aprendermos um pouco sobre o Terraform precisamos criar uma conta em algum 
 https://m.do.co/c/ee28782de1c9
 
 Para criar uma conta é só seguir o passo a passo no site. Eu recomendo utilizar a integração com o Google ou Github. Mesmo com todo esse crédito, a Digital Ocean exige que você cadastre uma forma de pagamento. Ela pode ser um cartão de crédito ou uma conta no paypal. Com a conta criada, vamos procurar pelo item “API” no menu, provavelmente no canto esquerdo.
-A primeira coisa que precisamos fazer nessa tela e gerar um novo token. Coloque um nome pra esse token, click em salvar. Agora salve esse valor em algum local de fácil acesso pois precisaremos dela mais pra frente.
+A primeira coisa que precisamos fazer nessa tela é gerar um novo token. Coloque um nome pra esse token, clique em salvar. Agora salve esse valor em algum local de fácil acesso pois precisaremos dela mais pra frente.
 O próximo passo é cadastrar nossa chave pública na nossa conta para que possamos acessar as máquinas via ssh. Clique na sua fotinha no canto superior direito e no menu clique em Account > Security > Add SSH Key.
 
 Volte para o terminal e verifique se você já possui uma chave configurada, o caminho default é:

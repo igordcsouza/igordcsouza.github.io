@@ -27,7 +27,7 @@ terraform init
 
 Esse comando analisa todo nosso código terraform e encontra todos os `dicionários` declarados e faz download do provider para que possamos utilizar os seus recursos.
 
-Um problema diferenca na versao atual, e que agora precisamos especificar exatamente qual o provedor estamos utilizando.
+Um problema diferença na versão atual, é que agora precisamos especificar exatamente qual o provedor estamos utilizando.
 
 Abra o terminal e na mesma pasta que criamos o arquivo main.tf execute o comando e verá uma saída parecida com a seguinte:
 
@@ -69,9 +69,9 @@ Para resolver isso vamos criar um arquivo chamado de `versions.tf` e vamos adici
 }
 ```
 
-Nesse caso estamos deixando explicito para o terraform que quando utilizarmos o provider `digitalocean` ele deve olhar o provider que se encontra no registry utilizando o path `digitalocean/digitalocean`. Eu nao vou colocar uma versao especifica do provider pois quero usar sempre a ultima disponivel, mas e uma boa pratica especificar uma versao principalmente se voce estiver fazendo uso do codigo em producao. 
+Nesse caso estamos deixando explícito para o terraform que quando utilizarmos o provider `digitalocean` ele deve olhar o provider que se encontra no registry utilizando o path `digitalocean/digitalocean`. Eu não vou colocar uma versão específica do provider pois quero usar sempre a última disponível, mas é uma boa prática especificar uma versão principalmente se você estiver fazendo uso do código em produção. 
 
-Vamos aproveitar pra cadastrar uma versao minima e maxima do terraform, a principio as proximas versoes nao devem ter muitas break changes, mas quando lancarem a 0.15.x eu atualizo esse material!
+Vamos aproveitar pra cadastrar uma versão mínima e máxima do terraform, a princípio as próximas versões não devem ter muitas break changes, mas quando lançarem a 0.15.x eu atualizo esse material!
 
 Vamos rodar novamente o `terraform init`:
 
@@ -135,9 +135,9 @@ provider "registry.terraform.io/digitalocean/digitalocean" {
 }
 ```
 
-Esse arquivo e mantido pelo proprio comando `init` e deve ser adicionado ao seu repositorio. Isso ajuda a manter a versao da mesma forma que voce faria setando uma versao direto no arquivo `versions.tf`.
+Esse arquivo é mantido pelo próprio comando `init` e deve ser adicionado ao seu repositório. Isso ajuda a manter a versão da mesma forma que você faria setando uma versão direto no arquivo `versions.tf`.
 
-Caso voce queira atualizar a versao de um provider onde existe esse arquivo, basta executar o comando `terraform init -upgrade=true`, ele vai baixar a ultima versao disponivel do provider sempre respeitando qualquer restricao que voce tenha adicionado. Caso voce tenha mantido como o meu, vai sempre ter a versao mais nova e consequentemente mais instavel.
+Caso você queira atualizar a versão de um provider onde existe esse arquivo, basta executar o comando `terraform init -upgrade=true`, ele vai baixar a última versão disponível do provider sempre respeitando qualquer restrição que você tenha adicionado. Caso você tenha mantido como o meu, vai sempre ter a versão mais nova e consequentemente mais instável.
 
 ## Terraform plan
 
@@ -389,9 +389,9 @@ Do you want to perform these actions?
   Enter a value:
 ```
 
-Se voce prestar atencao, vai perceber que a saida ate aqui e bem similar a que tivemos no `plan`, isso acontece por que o `apply` antes de realmente aplicar as alteracoes ele executa um plan para que voce possa se certificar de que realmente quer fazer isso.
+Se você prestar atenção, vai perceber que a saída até aqui é bem similar a que tivemos no `plan`, isso acontece por que o `apply` antes de realmente aplicar as alterações ele executa um plan para que você possa se certificar de que realmente quer fazer isso.
 
-Se voce quiser burlar esse plan e simplesmente aceitar o que vai ser criado, basta executar `terraform apply -auto-approve`.
+Se você quiser burlar esse plan e simplesmente aceitar o que vai ser criado, basta executar `terraform apply -auto-approve`.
 
 ```
 terraform apply -auto-approve
@@ -402,9 +402,9 @@ Error: Error creating droplet: POST https://api.digitalocean.com/v2/droplets: 40
 
 Achou que eu ia te livrar de todos os erros? Achou errado!
 
-Bom, `401 Unable to authenticate you` significa que nao foi possivel se autenticar com a api da Digital Ocean. Se voltarmos la na pagina sobre o provider vamos conseguir entender melhor como corrigir o erro.
+Bom, `401 Unable to authenticate you` significa que não foi possível se autenticar com a api da Digital Ocean. Se voltarmos lá na página sobre o provider vamos conseguir entender melhor como corrigir o erro.
 
-De toda forma, a primeira coisa que precisamos fazer e criar um token no painel da Digital Ocean. Acesse o painel de controle da sua conta e procure por API, no momento que escrevo e o ultimo item da coluna esquerda. Clique em `generate new token` de um nome para o seu token e copie o token que vai aparecer para voce. Algo como:
+De toda forma, a primeira coisa que precisamos fazer é criar um token no painel da Digital Ocean. Acesse o painel de controle da sua conta e procure por API, no momento que escrevo é o último item da coluna esquerda. Clique em `generate new token` de um nome para o seu token e copie o token que vai aparecer para você. Algo como:
 
 ```
  b783123asd294f002c5ea9af1231298327903284kmmsadoiu48d02707a2018588d
@@ -423,7 +423,7 @@ provider "digitalocean" {
 ```
 
 
-O nome `do_token` poderia ser qualquer coisa, esse e o campo onde voce nomeia sua variavel e o parametro `default` e onde voce cadastra um valor padrao pra ela. Sem esse parametro, toda vez que voce rodar o `plan` ou o `apply` ele vai te perguntar o valor da variavel. Se isso e o que voce quer, basta remover a linha com o parametro default.
+O nome `do_token` poderia ser qualquer coisa, esse é o campo onde você nomeia sua variável e o parametro `default` e onde você cadastra um valor padrão pra ela. Sem esse parâmetro, toda vez que você rodar o `plan` ou o `apply` ele vai te perguntar o valor da variável. Se isso é o que você quer, basta remover a linha com o parâmetro default.
 
 
 Vamos executar novamente nosso apply:
@@ -434,7 +434,7 @@ digitalocean_droplet.web: Creating...
 Error: Error creating droplet: POST https://api.digitalocean.com/v2/droplets: 401 Unable to authenticate you
 ```
 
-Mesmo com o token cadastrado, a gente continua recebendo o mesmo erro. Isso acontece por que apesar de termos criado uma variavel nao contamos para o provider que ele deve utilizar essa variavel. Vamos fazer isso agora.
+Mesmo com o token cadastrado, a gente continua recebendo o mesmo erro. Isso acontece por que apesar de termos criado uma variável, não contamos para o provider que ele deve utilizar essa variável. Vamos fazer isso agora.
 
 ```
  provider "digitalocean" {
@@ -453,9 +453,9 @@ resource "digitalocean_droplet" "web" {
 }
 ```
 
-Agora o provider `digitalocean` sabe que ele deve procurar por uma variavel chamada `do_token` e utilizar no parametro `token`.
+Agora o provider `digitalocean` sabe que ele deve procurar por uma variável chamada `do_token` e utilizar no parâmetro `token`.
 
-Vamos tentar mais uma vez criar nossa maquina.
+Vamos tentar mais uma vez criar nossa máquina.
 
 ```
 terraform apply -auto-approve
@@ -464,7 +464,7 @@ digitalocean_droplet.web: Creating...
 Error: Error creating droplet: POST https://api.digitalocean.com/v2/droplets: 422 nyc2 is unavailable.
 ```
 
-Opa, agora aconteceu uma das maiores felicidades de quem escreve codigo. Mudou o erro! O que e bom pois antes estavamos recebendo uma mensagem de que nao que nao conseguiamos nos conectar e agora a mensagem foi `422 nyc2 nao esta disponivel`. Acontece que apesar da documentacao do provider dar o exemplo com a regiao `nyc2`, essa regiao nao esta disponivel a algum tempo ja. Eu nao sei exatamente se eles nunca se preocuparam em corrigir isso ou se o objetivo e fazer a gente aprender a debugar o problema. Enfim, a solucao e so alterar a regiao para qualquer outra que exista, vamos mudar pra `ams3` que e a regiao de Amsterdam pra ficar mais pertinho de mim, mas voce pode usar outra qualquer como `nyc3` por exemplo.
+Opa, agora aconteceu uma das maiores felicidades de quem escreve código. Mudou o erro! O que é bom pois antes estavamos recebendo uma mensagem de que não conseguíamos nos conectar e agora a mensagem foi `422 nyc2 nao esta disponivel`. Acontece que apesar da documentação do provider dar o exemplo com a região `nyc2`, essa região não está disponível a algum tempo já. Eu não sei exatamente se eles nunca se preocuparam em corrigir isso ou se o objetivo é fazer a gente aprender a debugar o problema. Enfim, a solução é só alterar a região para qualquer outra que exista, vamos mudar pra `ams3` que e a região de Amsterdam pra ficar mais pertinho de mim, mas você pode usar outra qualquer como `nyc3` por exemplo.
 
 Mais uma tentativa:
 
@@ -480,21 +480,21 @@ digitalocean_droplet.web: Creation complete after 33s [id=232247846]
 Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
 ```
 
-Muito bom, mas agora vem a questao! Como a gente pode ter alguns dados desse droplet que acabamos de criar? Por exemplo, se eu quiser saber o IP desse droplet, como a gente faz?
+Muito bom, mas agora vem a questão! Como a gente pode ter alguns dados desse droplet que acabamos de criar? Por exemplo, se eu quiser saber o IP desse droplet, como a gente faz?
 
 Pra isso vamos utilizar os `outputs`.
 
 ## Terraform Output
 
-Toda documentacao de um resource e dividido em pelo menos tres niveis. 
+Toda documentação de um resource é dividido em pelo menos tres níveis. 
 
 * Exemplo de Uso
-* Referencia de Argumento (ou parametro)
-* Referencia de Atributos
+* Referência de Argumento (ou parâmetro)
+* Referência de Atributos
 
-Todos os itens que tivermos dentro do nivel de referencia de atributo podem ser utilizados seja para passar para um outro resource ou para ser utilizado como output do nosso codigo. Antes de comecarmos a misturar atributos de um recurso com argumento de outro, vamos usar os atributos na sua forma mais simples, como um output.
+Todos os itens que tivermos dentro do nível de referência de atributo podem ser utilizados seja para passar para um outro resource ou para ser utilizado como output do nosso código. Antes de começarmos a misturar atributos de um recurso com argumento de outro, vamos usar os atributos na sua forma mais simples, como um output.
 
-O `output` em si e uma feature que permite voce apresentar o valor de alguma coisa do seu codigo na tela. Mais pra frente vamos ver uma outra utilidade do `output` que e retornar os valores de um modulo. Mas fica tranquilo que isso e mais pra frente.
+O `output` em si é uma feature que permite voce apresentar o valor de alguma coisa do seu código na tela. Mais pra frente vamos ver uma outra utilidade do `output` que é retornar os valores de um módulo. Mas fica tranquilo que isso é mais pra frente.
 
 Por hora vamos adicionar o seguinte num arquivo chamado `output.tf`, que esteja na mesma pasta que nosso `main.tf`.
 
@@ -504,7 +504,7 @@ output "droplet_ip" {
 }
 ```
 
-Vamos executar novamente o comando `apply` e vamos ver que agora temos mais um retorno no nosso codigo.
+Vamos executar novamente o comando `apply` e vamos ver que agora temos mais um retorno no nosso código.
 
 ```
 terraform apply -auto-approve
@@ -517,9 +517,9 @@ Outputs:
 droplet_ip = "hashicourse"
 ```
 
-Nada foi criado ou alterado, como esperado, mas vemos um `Outputs:` na resposta e o valor que a gente cadastrou pro ip do nosso droplet. Agora manter esse valor hardcoded nao vai nos ajudar muito. Vamos entao utilizar um atributo do nosso droplet pra isso. 
+Nada foi criado ou alterado, como esperado, mas vemos um `Outputs:` na resposta e o valor que a gente cadastrou pro ip do nosso droplet. Agora manter esse valor hardcoded não vai nos ajudar muito. Vamos então utilizar um atributo do nosso droplet pra isso. 
 
-Primeiro, deixa eu te mostrar o codigo:
+Primeiro, deixa eu te mostrar o código:
 
 ```
  resource "digitalocean_droplet" "web" {
@@ -534,14 +534,14 @@ output "droplet_ip" {
 }
 ```
 
-.A forma de chegarmos nesse atributo e bem simples.
-* [A] Primeiro voce precisa pegar o nome do recurso, que e aquele primeiro ali "digitalocean_droplet" que nada mais e como uma forma de dizer para o provedor qual o recurso voce ta querendo criar. 
-* [B] Segundo pega o nome que voce deu para aquele recurso, no nosso caso "web". E muito comum precisarmos utilizar mais de uma vez um recurso no nosso codigo e essa e uma das formas de nomear aquele recurso. Vale lembrar que esse nome e unico, ok?
-* [C] Por ultimo precisamos ir la na documentacao e ver qual dos atributos disponiveis nos fornece o que precisamos. E raro que voce precise de algo que nao esta ali disponivel, mas raro nao e impossivel.
+.A forma de chegarmos nesse atributo é bem simples.
+* [A] Primeiro você precisa pegar o nome do recurso, que é aquele primeiro ali "digitalocean_droplet" que nada mais é como uma forma de dizer para o provedor qual o recurso você tá querendo criar. 
+* [B] Segundo pega o nome que você deu para aquele recurso, no nosso caso "web". É muito comum precisarmos utilizar mais de uma vez um recurso no nosso código e essa é uma das formas de nomear aquele recurso. Vale lembrar que esse nome é único, ok?
+* [C] Por último precisamos ir lá na documentação e ver qual dos atributos disponíveis nos fornece o que precisamos. É raro que você precise de algo que não está ali disponível, mas raro não é impossível.
 
 Por fim basta montar sempre no formato A.B.C :) 
 
-Se voce rodar o seu codigo agora deve ter um retorno como o seguinte:
+Se você rodar o seu código agora deve ter um retorno como o seguinte:
 
 ```
 terraform apply -auto-approve
@@ -554,9 +554,9 @@ Outputs:
 droplet_ip = "104.248.203.68"
 ```
 
-Muito provavelmente seu numero de ip é diferente do meu, mas se por algum milagre voce pegou o mesmo, bate um print e me manda :)
+Muito provavelmente seu numero de ip é diferente do meu, mas se por algum milagre você pegou o mesmo, bate um print e me manda :)
 
-Uma ultima dica no que se refere a outputs e que voce nao precisa utilizar apenas o apply para ter acesso a todos os outputs do seu codigo. Considerando que voce ja tenha executado o apply pelo menos uma vez, voce pode utilizar o `terraform output`:
+Uma última dica no que se refere a outputs é que você não precisa utilizar apenas o apply para ter acesso a todos os outputs do seu código. Considerando que você já tenha executado o apply pelo menos uma vez, você pode utilizar o `terraform output`:
 
 ```
 terraform output
@@ -565,8 +565,8 @@ droplet_ip = "104.248.203.68"
 
 ## Terraform Destroy
 
-Agora que ja criamos um droplet, voce talvez esteja se perguntando "Beleza, agora como eu desligo esse droplet pra nao gastar meu bonus?", bom pra isso tem um comando com nome bem sugestivo `destroy`.
-O `terraform destroy` e o oposto do `apply`. Uma das coisas que ambos tem em comum e o plan antes de executar. A gente nao falou antes, mas existe um parametro no `plan` chamado de `-destroy`. E esse e o parametro que o terraform usa quando a gente executa o `terraform destroy`, a saida deve ser parecida com a seguinte:
+Agora que já criamos um droplet, você talvez esteja se perguntando "Beleza, agora como eu desligo esse droplet pra não gastar meu bônus?", bom pra isso tem um comando com nome bem sugestivo `destroy`.
+O `terraform destroy` é o oposto do `apply`. Uma das coisas que ambos tem em comum é o plan antes de executar. A gente não falou antes, mas existe um parâmetro no `plan` chamado de `-destroy`. E esse é o parâmetro que o terraform usa quando a gente executa o `terraform destroy`, a saída deve ser parecida com a seguinte:
 
 ```
 terraform destroy
@@ -616,7 +616,7 @@ Do you really want to destroy all resources?
   Enter a value:
 ```
 
-O que vemos aqui e que vamos destruir todos os nossos recursos, que no caso e apenas um droplet. Voce pode digitar `yes` no comando acima ou utilizar o `-auto-approve` junto com o destroy para destruir todos os recursos sem nem olhar pro `plan -destroy`.
+O que vemos aqui é que vamos destruir todos os nossos recursos, que no caso é apenas um droplet. Você pode digitar `yes` no comando acima ou utilizar o `-auto-approve` junto com o destroy para destruir todos os recursos sem nem olhar pro `plan -destroy`.
 
 ```
 terraform destroy -auto-approve
@@ -628,11 +628,11 @@ digitalocean_droplet.web: Destruction complete after 22s
 Destroy complete! Resources: 1 destroyed.
 ```
 
-Beleza, agora voce pode descansar em paz que seu bonus/dinheiro nao esta sendo mais consumido. Lembre-se sempre de destruir os recursos da sua conta pra garantir que nao tenha surpreza no fim do mes. Importante também e criar um alerta la na digitalocean, eu recomendo criar um valor de 5$ que e o custo de um droplet, se passar disso provavelmente algo esta errado. 
+Beleza, agora você pode descansar em paz que seu bônus/dinheiro não está sendo mais consumido. Lembre-se sempre de destruir os recursos da sua conta pra garantir que não tenha surpresa no fim do mês. Importante também é criar um alerta lá na digitalocean, eu recomendo criar um valor de 5$ que é o custo de um droplet, se passar disso provavelmente algo está errado. 
 
 ## Arquivo de Variaveis
 
-Uma coisa comum de se ver sao codigos que utilizam uma variavel da seguinte forma:
+Uma coisa comum de se ver são códigos que utilizam uma variável da seguinte forma:
 
 ```
  variable "do_token" {
@@ -641,15 +641,15 @@ Uma coisa comum de se ver sao codigos que utilizam uma variavel da seguinte form
 }
 ```
 
-Ou seja, nao possuem um valor padrao para a variavel, acontece que dependendo da quantidade de variaveis que existem nesse formato, pode ser bem chato de ficar colocando uma a uma. 
+Ou seja, nao possuem um valor padrão para a variável, acontece que dependendo da quantidade de variáveis que existem nesse formato, pode ser bem chato de ficar colocando uma a uma. 
 
-Uma solucao, bem gambiarra, que eu ja fiz muito e colocar um valor `default` para cada uma dessas variaveis e garantir que nao iria adicionar as alteracoes desse arquivo no repositorio git. O que normalmente acabava acontecendo depois de um tempo. Acontece que o `terraform` te da a possibilidade de usar um arquivo so para adicionar esse valores. Basta criarmos um arquivo `qualquer_coisa.tfvars`. Normalmente as pessoas utilizam `terraform.tfvars` ou entao `nome_do_ambiente.tfvars`. Vamos criar o nosso como `terraform.tfvars` mesmo.
+Uma solução, bem gambiarra, que eu já fiz muito é colocar um valor `default` para cada uma dessas variáveis e garantir que não iria adicionar as alterações desse arquivo no repositório git. O que normalmente acabava acontecendo depois de um tempo. Acontece que o `terraform` te dá a possibilidade de usar um arquivo só para adicionar esse valores. Basta criarmos um arquivo `qualquer_coisa.tfvars`. Normalmente as pessoas utilizam `terraform.tfvars` ou então `nome_do_ambiente.tfvars`. Vamos criar o nosso como `terraform.tfvars` mesmo.
 
 ```
  do_token = "b783123asd294f002c5ea9af1231298327903284kmmsadoiu48d02707a2018588d"
 ```
 
-Esse e o formato do arquivo de variaveis, caso exista um valor padrao e voce queira sobreescreve ele, pode colocar o novo valor nesse arquivo e vai funcionar também. Agora precisamos dizer para o `terraform` que ele deve buscar os valores das variaveis primeiro nesse arquivo, para isso vamos executar o `apply` novamente passando o `-var-file` como parametro. Esse `-varfile` vale para o `plan` e o `destroy` também. 
+Esse é o formato do arquivo de variáveis, caso exista um valor padrão e você queira sobrescrever ele, pode colocar o novo valor nesse arquivo e vai funcionar também. Agora precisamos dizer para o `terraform` que ele deve buscar os valores das variáveis primeiro nesse arquivo, para isso vamos executar o `apply` novamente passando o `-var-file` como parâmetro. Esse `-varfile` vale para o `plan` e o `destroy` também. 
 
 ```
 terraform apply -var-file terraform.tfvars
