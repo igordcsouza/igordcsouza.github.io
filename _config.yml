@@ -1,7 +1,7 @@
 # --- General options --- #
 
 # Name of website
-title: IgorSouza
+title: Igor Souza
 
 # Short description of your site
 description: This is my open version of my Evernote!
@@ -60,7 +60,7 @@ footer-link-col: "#404040"
 # Change all these values or delete the ones you don't want.
 # Important: you must keep the "name" parameter, everything else you can remove
 author:
-  name: Some Person
+  name: Igor Souza
 
 # Select your active Social Network Links.
 # Uncomment the links you want to show in the footer and add your information to each link.
